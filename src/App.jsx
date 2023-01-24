@@ -1,9 +1,14 @@
 import { useState } from 'react';
 
-function App() {
+import Header from './components/Header';
+import NuevoPresupuesto from './components/NuevoPresupuesto';
 
+function App() {
   return (
-    <h1>Control de Gastos</h1>
+    <>
+      <Header />
+      <NuevoPresupuesto />
+    </>
   )
 }
 
