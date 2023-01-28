@@ -1,12 +1,11 @@
 import CerrarBtn from '../img/cerrar.svg';
 
 
-const Modal = () => {
+const Modal = ({ setModal }) => {
 
     const ocultarModal = () => {
 
-        console.log('Ocultar');
-
+        setModal( false );
     }
 
     return (
