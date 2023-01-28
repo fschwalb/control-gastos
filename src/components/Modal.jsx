@@ -1,10 +1,23 @@
-import { useState } from "react";
+import CerrarBtn from '../img/cerrar.svg';
 
 
 const Modal = () => {
+
+    const ocultarModal = () => {
+
+        console.log('Ocultar');
+
+    }
+
     return (
         <div className="modal">
-            <p>desde modal</p>
+            <div className="cerrar-modal">
+                <img 
+                    src={ CerrarBtn } 
+                    alt="cerrar modal" 
+                    onClick={ ocultarModal }
+                />
+            </div>
         </div>
     )
 }
