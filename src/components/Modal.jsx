@@ -18,6 +18,17 @@ const Modal = ({ setModal, animarModal, setAnimarModal }) => {
         }, 400);
     }
 
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        if ([ nombre, cantidad, categoria ].includes('')) {
+            console.log('fallo validacion');
+
+            return;
+        }
+
+    }
+
     return (
         <div className="modal">
             <div className="cerrar-modal">
@@ -28,7 +39,10 @@ const Modal = ({ setModal, animarModal, setAnimarModal }) => {
                 />
             </div>
 
-            <form className={ `formulario ${ animarModal ? 'animar' : 'cerrar' }` }>
+            <form 
+                onSubmit={ handleSubmit }
+                className={ `formulario ${ animarModal ? 'animar' : 'cerrar' }` }
+            >
                 <legend>Nuevo Gasto</legend>
 
                 <div className='campo'>
