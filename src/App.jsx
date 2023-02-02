@@ -21,16 +21,21 @@ function App() {
   const [ gastoEditar, setGastoEditar ] = useState({});
 
   useEffect( () => {
-    if ( Object.keys(gastoEditar).length > 0  ) {
-      
-      handleNuevoGasto();
 
+    if ( Object.keys(gastoEditar).length > 0  ) {
+      setModal( true );
+
+      setTimeout(() => {
+        setAnimarModal( true )
+      }, 400);
     }
+    
   }, [ gastoEditar ]);
 
   const handleNuevoGasto = () => {
 
     setModal( true );
+    setGastoEditar( {} )
 
     setTimeout(() => {
       setAnimarModal( true )
@@ -73,9 +78,9 @@ function App() {
 
           <div className='nuevo-gasto'>
             <img 
-              src={IconoNuevoGasto} 
+              src={ IconoNuevoGasto } 
               alt="icono nuevo gasto" 
-              onClick={handleNuevoGasto}
+              onClick={ handleNuevoGasto }
             />
           </div>
         </>
@@ -87,6 +92,7 @@ function App() {
                     animarModal={ animarModal }
                     setAnimarModal={ setAnimarModal }
                     guardarGasto={ guardarGasto }
+                    gastoEditar={ gastoEditar }
                 />}
     </div>
   )
